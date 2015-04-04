@@ -42,3 +42,7 @@ Network Trash Folder
 Temporary Items
 .apdisk
 source/Irrlicht/obj/
+source/Irrlicht/Irrlicht11.0.v12.suo
+*.opensdf
+source/Irrlicht/Irrlicht11.0.sdf
+*.lastcodeanalysissucceeded

@@ -116,8 +116,8 @@
 //! Maximum number of texture an SMaterial can have, up to 8 are supported by Irrlicht.
 #define _IRR_MATERIAL_MAX_TEXTURES_ 4
 
-//! Define _IRR_COMPILE_WITH_DIRECT3D_8_ and _IRR_COMPILE_WITH_DIRECT3D_9_ to
-//! compile the Irrlicht engine with Direct3D8 and/or DIRECT3D9.
+//! Define _IRR_COMPILE_WITH_DIRECT3D_9_ to
+//! compile the Irrlicht engine with DIRECT3D9.
 /** If you only want to use the software device or opengl you can disable those defines.
 This switch is mostly disabled because people do not get the g++ compiler compile
 directX header files, and directX is only available on Windows platforms. If you
@@ -145,13 +145,8 @@ If not defined, Windows Multimedia library is used, which offers also broad supp
 #undef _IRR_COMPILE_WITH_DIRECTINPUT_JOYSTICK_
 #endif
 
-//! Only define _IRR_COMPILE_WITH_DIRECT3D_8_ if you have an appropriate DXSDK, e.g. Summer 2004
-// #define _IRR_COMPILE_WITH_DIRECT3D_8_
-#define _IRR_COMPILE_WITH_DIRECT3D_9_
+//#define _IRR_COMPILE_WITH_DIRECT3D_9_
 
-#ifdef NO_IRR_COMPILE_WITH_DIRECT3D_8_
-#undef _IRR_COMPILE_WITH_DIRECT3D_8_
-#endif
 #ifdef NO_IRR_COMPILE_WITH_DIRECT3D_9_
 #undef _IRR_COMPILE_WITH_DIRECT3D_9_
 #endif
@@ -164,21 +159,6 @@ define out. */
 #define _IRR_COMPILE_WITH_OPENGL_
 #ifdef NO_IRR_COMPILE_WITH_OPENGL_
 #undef _IRR_COMPILE_WITH_OPENGL_
-#endif
-
-//! Define _IRR_COMPILE_WITH_SOFTWARE_ to compile the Irrlicht engine with software driver
-/** If you do not need the software driver, or want to use Burning's Video instead,
-comment this define out */
-#define _IRR_COMPILE_WITH_SOFTWARE_
-#ifdef NO_IRR_COMPILE_WITH_SOFTWARE_
-#undef _IRR_COMPILE_WITH_SOFTWARE_
-#endif
-
-//! Define _IRR_COMPILE_WITH_BURNINGSVIDEO_ to compile the Irrlicht engine with Burning's video driver
-/** If you do not need this software driver, you can comment this define out. */
-#define _IRR_COMPILE_WITH_BURNINGSVIDEO_
-#ifdef NO_IRR_COMPILE_WITH_BURNINGSVIDEO_
-#undef _IRR_COMPILE_WITH_BURNINGSVIDEO_
 #endif
 
 //! Define _IRR_COMPILE_WITH_X11_ to compile the Irrlicht engine with X11 support.
@@ -308,29 +288,6 @@ to provide the user with the proper DLL. That's why it's disabled by default. */
 /** Enable, by opting-in, to use the nVidia PerfHUD performance analysis driver
 tool <http://developer.nvidia.com/object/nvperfhud_home.html>. */
 #undef _IRR_USE_NVIDIA_PERFHUD_
-
-//! Define one of the three setting for Burning's Video Software Rasterizer
-/** So if we were marketing guys we could say Irrlicht has 4 Software-Rasterizers.
-     In a Nutshell:
-          All Burnings Rasterizers use 32 Bit Backbuffer, 32Bit Texture & 32 Bit Z or WBuffer,
-          16 Bit/32 Bit can be adjusted on a global flag.
-
-          BURNINGVIDEO_RENDERER_BEAUTIFUL
-               32 Bit + Vertexcolor + Lighting + Per Pixel Perspective Correct + SubPixel/SubTexel Correct +
-               Bilinear Texturefiltering + WBuffer
-
-          BURNINGVIDEO_RENDERER_FAST
-               32 Bit + Per Pixel Perspective Correct + SubPixel/SubTexel Correct + WBuffer +
-               Bilinear Dithering TextureFiltering + WBuffer
-
-          BURNINGVIDEO_RENDERER_ULTRA_FAST
-               16Bit + SubPixel/SubTexel Correct + ZBuffer
-*/
-
-#define BURNINGVIDEO_RENDERER_BEAUTIFUL
-//#define BURNINGVIDEO_RENDERER_FAST
-//#define BURNINGVIDEO_RENDERER_ULTRA_FAST
-//#define BURNINGVIDEO_RENDERER_CE
 
 //! Uncomment the following line if you want to ignore the deprecated warnings
 //#define IGNORE_DEPRECATED_WARNING
@@ -729,13 +686,7 @@ precision will be lower but speed higher. currently X86 only
 //! WinCE does not have OpenGL or DirectX9. use minimal loaders
 #if defined(_WIN32_WCE)
      #undef _IRR_COMPILE_WITH_OPENGL_
-     #undef _IRR_COMPILE_WITH_DIRECT3D_8_
      #undef _IRR_COMPILE_WITH_DIRECT3D_9_
-
-     #undef BURNINGVIDEO_RENDERER_BEAUTIFUL
-     #undef BURNINGVIDEO_RENDERER_FAST
-     #undef BURNINGVIDEO_RENDERER_ULTRA_FAST
-     #define BURNINGVIDEO_RENDERER_CE
 
      #undef _IRR_COMPILE_WITH_WINDOWS_DEVICE_
      #define _IRR_COMPILE_WITH_WINDOWS_CE_DEVICE_

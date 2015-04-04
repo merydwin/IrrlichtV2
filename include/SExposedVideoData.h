@@ -8,8 +8,6 @@
 // forward declarations for internal pointers
 struct IDirect3D9;
 struct IDirect3DDevice9;
-struct IDirect3D8;
-struct IDirect3DDevice8;
 
 namespace irr
 {
@@ -42,20 +40,6 @@ struct SExposedVideoData
                void* HWnd;
 
           } D3D9;
-
-          struct
-          {
-               //! Pointer to the IDirect3D8 interface
-               IDirect3D8* D3D8;
-
-               //! Pointer to the IDirect3DDevice8 interface
-               IDirect3DDevice8* D3DDev8;
-
-               //! Window handle.
-               /** Get with for example with: HWND h = reinterpret_cast<HWND>(exposedData.D3D8.HWnd) */
-               void* HWnd;
-
-          } D3D8;
 
           struct
           {

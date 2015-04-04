@@ -36,11 +36,6 @@ namespace irr
 {
      namespace video
      {
-          #ifdef _IRR_COMPILE_WITH_DIRECT3D_8_
-          IVideoDriver* createDirectX8Driver(const irr::SIrrlichtCreationParameters& params,
-               io::IFileSystem* io, HWND window);
-          #endif
-
           #ifdef _IRR_COMPILE_WITH_DIRECT3D_9_
           IVideoDriver* createDirectX9Driver(const irr::SIrrlichtCreationParameters& params,
                io::IFileSystem* io, HWND window);
@@ -1084,21 +1079,6 @@ void CIrrDeviceWin32::createDriver()
 {
      switch(CreationParams.DriverType)
      {
-     case video::EDT_DIRECT3D8:
-          #ifdef _IRR_COMPILE_WITH_DIRECT3D_8_
-
-          VideoDriver = video::createDirectX8Driver(CreationParams, FileSystem, HWnd);
-
-          if (!VideoDriver)
-          {
-               os::Printer::log("Could not create DIRECT3D8 Driver.", ELL_ERROR);
-          }
-          #else
-          os::Printer::log("DIRECT3D8 Driver was not compiled into this dll. Try another one.", ELL_ERROR);
-          #endif // _IRR_COMPILE_WITH_DIRECT3D_8_
-
-          break;
-
      case video::EDT_DIRECT3D9:
           #ifdef _IRR_COMPILE_WITH_DIRECT3D_9_
 
@@ -1126,28 +1106,6 @@ void CIrrDeviceWin32::createDriver()
           }
           #else
           os::Printer::log("OpenGL driver was not compiled in.", ELL_ERROR);
-          #endif
-          break;
-
-     case video::EDT_SOFTWARE:
-
-          #ifdef _IRR_COMPILE_WITH_SOFTWARE_
-          switchToFullScreen();
-
-          VideoDriver = video::createSoftwareDriver(CreationParams.WindowSize, CreationParams.Fullscreen, FileSystem, this);
-          #else
-          os::Printer::log("Software driver was not compiled in.", ELL_ERROR);
-          #endif
-
-          break;
-
-     case video::EDT_BURNINGSVIDEO:
-          #ifdef _IRR_COMPILE_WITH_BURNINGSVIDEO_
-          switchToFullScreen();
-
-          VideoDriver = video::createBurningVideoDriver(CreationParams, FileSystem, this);
-          #else
-          os::Printer::log("Burning's Video driver was not compiled in.", ELL_ERROR);
           #endif
           break;
 

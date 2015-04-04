@@ -322,7 +322,7 @@ namespace irr
      device could not be created.
      */
      extern "C" IRRLICHT_API IrrlichtDevice* IRRCALLCONV createDevice(
-          video::E_DRIVER_TYPE deviceType = video::EDT_SOFTWARE,
+          video::E_DRIVER_TYPE deviceType = video::EDT_OPENGL,
           // parantheses are necessary for some compilers
           const core::dimension2d<u32>& windowSize = (core::dimension2d<u32>(640,480)),
           u32 bits = 16,

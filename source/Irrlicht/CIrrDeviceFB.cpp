@@ -190,24 +190,7 @@ void CIrrDeviceFB::createDriver()
 {
      switch(CreationParams.DriverType)
      {
-     case video::EDT_SOFTWARE:
-          #ifdef _IRR_COMPILE_WITH_SOFTWARE_
-          VideoDriver = video::createSoftwareDriver(CreationParams.WindowSize, CreationParams.Fullscreen, FileSystem, this);
-          #else
-          os::Printer::log("No Software driver support compiled in.", ELL_WARNING);
-          #endif
-          break;
-          
-     case video::EDT_BURNINGSVIDEO:
-          #ifdef _IRR_COMPILE_WITH_BURNINGSVIDEO_
-          VideoDriver = video::createBurningVideoDriver(CreationParams, FileSystem, this);
-          #else
-          os::Printer::log("Burning's video driver was not compiled in.", ELL_WARNING);
-          #endif
-          break;
-
      case video::EDT_OPENGL:
-     case video::EDT_DIRECT3D8:
      case video::EDT_DIRECT3D9:
           os::Printer::log("This driver is not available in FB. Try Software renderer.",
                ELL_WARNING);
