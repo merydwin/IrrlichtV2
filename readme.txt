@@ -82,21 +82,21 @@ The Irrlicht Engine SDK version 1.8.1
   want to use the precompiled version) you need the following:
 
   * Windows:
-	* Needed: PlatformSDK (which usually comes with all IDEs, download
-			it separately for MSVC Express 2005)
-	* Optional: DirectX SDK, for D3D9 support
-	* Optional: DirectX SDK prior to May 2006, for D3D8 support
+     * Needed: PlatformSDK (which usually comes with all IDEs, download
+               it separately for MSVC Express 2005)
+     * Optional: DirectX SDK, for D3D9 support
+     * Optional: DirectX SDK prior to May 2006, for D3D8 support
 
   * Linux:
-	* Needed: XServer with include files
-	* Optional: OpenGL headers and libraries (libGL.so) for OpenGL support
-		GLX +
-		XF86VidMode [package x11proto-xf86vidmode-dev] or XRandr
-		(X11 support libraries, the latter two for fullscreen mode)
+     * Needed: XServer with include files
+     * Optional: OpenGL headers and libraries (libGL.so) for OpenGL support
+          GLX +
+          XF86VidMode [package x11proto-xf86vidmode-dev] or XRandr
+          (X11 support libraries, the latter two for fullscreen mode)
 
   * OSX:
-	* Needed: XCode and Cocoa framework
-	* Needed: OpenGL headers and libraries
+     * Needed: XCode and Cocoa framework
+     * Needed: OpenGL headers and libraries
 
 ==========================================================================
 4. Release Notes
@@ -185,51 +185,51 @@ The Irrlicht Engine SDK version 1.8.1
 
   Many others (this list hasn't been updated in a while, but they are often mentioned in changes.txt)
   Etienne Petitjean wrote the MacPort of the engine
-  Mark Jeacocke	Wrote lots of helpful comments and ideas in the forums and per email.
-  Julio Gorgé	Created the 'Unofficial DirectX 9.0 Driver for the Irrlicht Engine'
-  Andy Spurgeon	Wrote the Dev-Cpp tutorial.
-  André Simon	Wrote the Codewarrior tutorial.
-  KnightToFlight	Created the unoffical terrain renderer addon for the Irrlicht Engine.
-  Jon Pry	Wrote the code to load compressed TGA files.
-  Matthew Couch	Wrote the tokamak integration tutorial.
-  Max Winkel	Wrote the splitscreen tutorial.
-  Gorgon Zola	Wrote the ODE integration tutorial.
-  Dean P. Macri	Sent in code for curved surfaces and PCX Loading.
-  Sirshane	Made several bug fixes, sent in code for making the mouse cursor invisible in Linux.
-  Matthias Gall	Sent in code for a spline scene node animator and reported lots of bugs.
-  Mario Gruber	Suggested triangle fan drawing and sent in code for this.
-  Ariaci	Spotted out a bug in the ATI driver.
-  Dr Andros C Bragianos	Improved texture mapping in cube scene node.
-  Philipp Dortmann	Sent in code for stencil buffer support for OpenGL.
-  Jerome Nichols	Created the Irrlicht/Ruby interface located at irr.rubyforge.org
-  Vash TheStampede	Sent code for missing Draw2DLine() implementations
-  MattyBoy	XBOX support suggestions
-  Oliver Klems	createImageFromData() method suggestion/implementation
-  Jox	really, really a lot of bug fixes, and the LMTS file loader
-  Zola	Quaternion method additions
-  Tomasz Nowakowski	various bug fixes
-  Nicholas Bray	stencil shadow bug fixes with OpenGL
-  REAPER	mouswheel events for scrollbar
-  Calimero	various bug fixes like vector2d operators
-  Haddock	bugfix in the linked list
-  G.o.D	XML parser fix
-  Erik Zilli	Translated some of the tutorials from my stuttering english into real english. :)
-  Martin Piskernig	Linux bugfixing and testing
-  Soconne	Wrote the original terrain renderer were Irrlichts terrain renderer of Irrlicht is based on it.
-  Spintz	GeoMipMap scene node, terrain renderer of Irrlicht is based on it.
-  Murphy McCauley	OCT file loader, MIM tools
-  Saurav Mohapatra	IrrCSM, and lots of addons, suggestions and bug reports
-  Zhuck Dimitry	My3D Tools
-  Terry Welsh	Allowed me to use the textures of his 'Parallax Mapping with Offset Limiting' paper for the parallax demo of Irrlicht
-  rt	Wrote the original .png loader for Irrlicht
-  Salvatore Russo	Wrote the original .dmf loader for Irrlicht
-  Vox	Various bug reports and fixes
-  atomice	Contributed code for a ms3d loader enhancement
-  William Finlayson	OpenGL RTT, GLSL support and the reflection 2 layer material for OpenGL.
-  Delight	Various code contributions for Irrlicht.NET (particle system, basic shader support and more)
-  Michael Zoech	Improved GLSL support
-  Jean-loup Gailly, Mark Adler	Created the zlib and libpng
-  Guy Eric Schalnat, Andreas Dilger, Glenn Randers-Pehrson and others	Created libpng
-  The Independent JPEG Group	Created JPEG lib
+  Mark Jeacocke     Wrote lots of helpful comments and ideas in the forums and per email.
+  Julio Gorgé     Created the 'Unofficial DirectX 9.0 Driver for the Irrlicht Engine'
+  Andy Spurgeon     Wrote the Dev-Cpp tutorial.
+  André Simon     Wrote the Codewarrior tutorial.
+  KnightToFlight     Created the unoffical terrain renderer addon for the Irrlicht Engine.
+  Jon Pry     Wrote the code to load compressed TGA files.
+  Matthew Couch     Wrote the tokamak integration tutorial.
+  Max Winkel     Wrote the splitscreen tutorial.
+  Gorgon Zola     Wrote the ODE integration tutorial.
+  Dean P. Macri     Sent in code for curved surfaces and PCX Loading.
+  Sirshane     Made several bug fixes, sent in code for making the mouse cursor invisible in Linux.
+  Matthias Gall     Sent in code for a spline scene node animator and reported lots of bugs.
+  Mario Gruber     Suggested triangle fan drawing and sent in code for this.
+  Ariaci     Spotted out a bug in the ATI driver.
+  Dr Andros C Bragianos     Improved texture mapping in cube scene node.
+  Philipp Dortmann     Sent in code for stencil buffer support for OpenGL.
+  Jerome Nichols     Created the Irrlicht/Ruby interface located at irr.rubyforge.org
+  Vash TheStampede     Sent code for missing Draw2DLine() implementations
+  MattyBoy     XBOX support suggestions
+  Oliver Klems     createImageFromData() method suggestion/implementation
+  Jox     really, really a lot of bug fixes, and the LMTS file loader
+  Zola     Quaternion method additions
+  Tomasz Nowakowski     various bug fixes
+  Nicholas Bray     stencil shadow bug fixes with OpenGL
+  REAPER     mouswheel events for scrollbar
+  Calimero     various bug fixes like vector2d operators
+  Haddock     bugfix in the linked list
+  G.o.D     XML parser fix
+  Erik Zilli     Translated some of the tutorials from my stuttering english into real english. :)
+  Martin Piskernig     Linux bugfixing and testing
+  Soconne     Wrote the original terrain renderer were Irrlichts terrain renderer of Irrlicht is based on it.
+  Spintz     GeoMipMap scene node, terrain renderer of Irrlicht is based on it.
+  Murphy McCauley     OCT file loader, MIM tools
+  Saurav Mohapatra     IrrCSM, and lots of addons, suggestions and bug reports
+  Zhuck Dimitry     My3D Tools
+  Terry Welsh     Allowed me to use the textures of his 'Parallax Mapping with Offset Limiting' paper for the parallax demo of Irrlicht
+  rt     Wrote the original .png loader for Irrlicht
+  Salvatore Russo     Wrote the original .dmf loader for Irrlicht
+  Vox     Various bug reports and fixes
+  atomice     Contributed code for a ms3d loader enhancement
+  William Finlayson     OpenGL RTT, GLSL support and the reflection 2 layer material for OpenGL.
+  Delight     Various code contributions for Irrlicht.NET (particle system, basic shader support and more)
+  Michael Zoech     Improved GLSL support
+  Jean-loup Gailly, Mark Adler     Created the zlib and libpng
+  Guy Eric Schalnat, Andreas Dilger, Glenn Randers-Pehrson and others     Created libpng
+  The Independent JPEG Group     Created JPEG lib
   Dr Brian Gladman AES Created aesGladman
   

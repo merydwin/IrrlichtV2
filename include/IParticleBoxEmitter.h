@@ -18,14 +18,14 @@ class IParticleBoxEmitter : public IParticleEmitter
 {
 public:
 
-	//! Set the box shape
-	virtual void setBox( const core::aabbox3df& box ) = 0;
+     //! Set the box shape
+     virtual void setBox( const core::aabbox3df& box ) = 0;
 
-	//! Get the box shape set
-	virtual const core::aabbox3df& getBox() const = 0;
+     //! Get the box shape set
+     virtual const core::aabbox3df& getBox() const = 0;
 
-	//! Get emitter type
-	virtual E_PARTICLE_EMITTER_TYPE getType() const { return EPET_BOX; }
+     //! Get emitter type
+     virtual E_PARTICLE_EMITTER_TYPE getType() const { return EPET_BOX; }
 };
 
 } // end namespace scene

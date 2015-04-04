@@ -15,32 +15,32 @@ namespace video
 
 //! constructor
 CSoftwareTexture::CSoftwareTexture(IImage* image, const io::path& name,
-		bool renderTarget, void* mipmapData)
+          bool renderTarget, void* mipmapData)
 : ITexture(name), Texture(0), IsRenderTarget(renderTarget)
 {
-	#ifdef _DEBUG
-	setDebugName("CSoftwareTexture");
-	#endif
+     #ifdef _DEBUG
+     setDebugName("CSoftwareTexture");
+     #endif
 
-	if (image)
-	{
-		OrigSize = image->getDimension();
-		core::dimension2d<u32> optSize=OrigSize.getOptimalSize();
+     if (image)
+     {
+          OrigSize = image->getDimension();
+          core::dimension2d<u32> optSize=OrigSize.getOptimalSize();
 
-		Image = new CImage(ECF_A1R5G5B5, OrigSize);
-		image->copyTo(Image);
+          Image = new CImage(ECF_A1R5G5B5, OrigSize);
+          image->copyTo(Image);
 
-		if (optSize == OrigSize)
-		{
-			Texture = Image;
-			Texture->grab();
-		}
-		else
-		{
-			Texture = new CImage(ECF_A1R5G5B5, optSize);
-			Image->copyToScaling(Texture);
-		}
-	}
+          if (optSize == OrigSize)
+          {
+               Texture = Image;
+               Texture->grab();
+          }
+          else
+          {
+               Texture = new CImage(ECF_A1R5G5B5, optSize);
+               Image->copyToScaling(Texture);
+          }
+     }
 }
 
 
@@ -48,11 +48,11 @@ CSoftwareTexture::CSoftwareTexture(IImage* image, const io::path& name,
 //! destructor
 CSoftwareTexture::~CSoftwareTexture()
 {
-	if (Image)
-		Image->drop();
+     if (Image)
+          Image->drop();
 
-	if (Texture)
-		Texture->drop();
+     if (Texture)
+          Texture->drop();
 }
 
 
@@ -60,7 +60,7 @@ CSoftwareTexture::~CSoftwareTexture()
 //! lock function
 void* CSoftwareTexture::lock(E_TEXTURE_LOCK_MODE mode, u32 mipmapLevel)
 {
-	return Image->lock();
+     return Image->lock();
 }
 
 
@@ -68,34 +68,34 @@ void* CSoftwareTexture::lock(E_TEXTURE_LOCK_MODE mode, u32 mipmapLevel)
 //! unlock function
 void CSoftwareTexture::unlock()
 {
-	if (Image != Texture)
-	{
-		os::Printer::log("Performance warning, slow unlock of non power of 2 texture.", ELL_WARNING);
-		Image->copyToScaling(Texture);
-	}
+     if (Image != Texture)
+     {
+          os::Printer::log("Performance warning, slow unlock of non power of 2 texture.", ELL_WARNING);
+          Image->copyToScaling(Texture);
+     }
 
-	Image->unlock();
+     Image->unlock();
 }
 
 
 //! Returns original size of the texture.
 const core::dimension2d<u32>& CSoftwareTexture::getOriginalSize() const
 {
-	return OrigSize;
+     return OrigSize;
 }
 
 
 //! Returns (=size) of the texture.
 const core::dimension2d<u32>& CSoftwareTexture::getSize() const
 {
-	return Image->getDimension();
+     return Image->getDimension();
 }
 
 
 //! returns unoptimized surface
 CImage* CSoftwareTexture::getImage()
 {
-	return Image;
+     return Image;
 }
 
 
@@ -103,7 +103,7 @@ CImage* CSoftwareTexture::getImage()
 //! returns texture surface
 CImage* CSoftwareTexture::getTexture()
 {
-	return Texture;
+     return Texture;
 }
 
 
@@ -111,7 +111,7 @@ CImage* CSoftwareTexture::getTexture()
 //! returns driver type of texture (=the driver, who created the texture)
 E_DRIVER_TYPE CSoftwareTexture::getDriverType() const
 {
-	return EDT_SOFTWARE;
+     return EDT_SOFTWARE;
 }
 
 
@@ -119,7 +119,7 @@ E_DRIVER_TYPE CSoftwareTexture::getDriverType() const
 //! returns color format of texture
 ECOLOR_FORMAT CSoftwareTexture::getColorFormat() const
 {
-	return ECF_A1R5G5B5;
+     return ECF_A1R5G5B5;
 }
 
 
@@ -127,7 +127,7 @@ ECOLOR_FORMAT CSoftwareTexture::getColorFormat() const
 //! returns pitch of texture (in bytes)
 u32 CSoftwareTexture::getPitch() const
 {
-	return Image->getDimension().Width * 2;
+     return Image->getDimension().Width * 2;
 }
 
 
@@ -135,12 +135,12 @@ u32 CSoftwareTexture::getPitch() const
 //! modifying the texture
 void CSoftwareTexture::regenerateMipMapLevels(void* mipmapData)
 {
-	// our software textures don't have mip maps
+     // our software textures don't have mip maps
 }
 
 bool CSoftwareTexture::isRenderTarget() const
 {
-	return IsRenderTarget;
+     return IsRenderTarget;
 }
 
 

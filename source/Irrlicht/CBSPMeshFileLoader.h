@@ -21,28 +21,28 @@ class CBSPMeshFileLoader : public IMeshLoader
 {
 public:
 
-	//! Constructor
-	CBSPMeshFileLoader(scene::ISceneManager* smgr, io::IFileSystem* fs);
+     //! Constructor
+     CBSPMeshFileLoader(scene::ISceneManager* smgr, io::IFileSystem* fs);
 
-	//! destructor
-	virtual ~CBSPMeshFileLoader();
+     //! destructor
+     virtual ~CBSPMeshFileLoader();
 
-	//! returns true if the file maybe is able to be loaded by this class
-	//! based on the file extension (e.g. ".bsp")
-	virtual bool isALoadableFileExtension(const io::path& filename) const;
+     //! returns true if the file maybe is able to be loaded by this class
+     //! based on the file extension (e.g. ".bsp")
+     virtual bool isALoadableFileExtension(const io::path& filename) const;
 
-	//! creates/loads an animated mesh from the file.
-	//! \return Pointer to the created mesh. Returns 0 if loading failed.
-	//! If you no longer need the mesh, you should call IAnimatedMesh::drop().
-	//! See IReferenceCounted::drop() for more information.
-	virtual IAnimatedMesh* createMesh(io::IReadFile* file);
+     //! creates/loads an animated mesh from the file.
+     //! \return Pointer to the created mesh. Returns 0 if loading failed.
+     //! If you no longer need the mesh, you should call IAnimatedMesh::drop().
+     //! See IReferenceCounted::drop() for more information.
+     virtual IAnimatedMesh* createMesh(io::IReadFile* file);
 
 private:
 
-	io::IFileSystem* FileSystem;
-	scene::ISceneManager* SceneManager;
+     io::IFileSystem* FileSystem;
+     scene::ISceneManager* SceneManager;
 
-	quake3::Q3LevelLoadParameter LoadParam;
+     quake3::Q3LevelLoadParameter LoadParam;
 };
 
 } // end namespace scene

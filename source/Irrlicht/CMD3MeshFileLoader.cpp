@@ -31,19 +31,19 @@ CMD3MeshFileLoader::~CMD3MeshFileLoader()
 //! based on the file extension (e.g. ".bsp")
 bool CMD3MeshFileLoader::isALoadableFileExtension(const io::path& filename) const
 {
-	return core::hasFileExtension ( filename, "md3" );
+     return core::hasFileExtension ( filename, "md3" );
 }
 
 
 IAnimatedMesh* CMD3MeshFileLoader::createMesh(io::IReadFile* file)
 {
-	CAnimatedMeshMD3 * mesh = new CAnimatedMeshMD3();
+     CAnimatedMeshMD3 * mesh = new CAnimatedMeshMD3();
 
-	if ( mesh->loadModelFile ( 0, file, SceneManager->getFileSystem(), SceneManager->getVideoDriver() ) )
-		return mesh;
+     if ( mesh->loadModelFile ( 0, file, SceneManager->getFileSystem(), SceneManager->getVideoDriver() ) )
+          return mesh;
 
-	mesh->drop ();
-	return 0;
+     mesh->drop ();
+     return 0;
 }
 
 

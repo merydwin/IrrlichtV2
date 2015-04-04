@@ -24,11 +24,11 @@ namespace video
 // byte-align structures
 #include "irrpack.h"
 
-	struct SLMPHeader {
-		u32	width;	// width
-		u32	height;	// height
-		// variably sized
-	} PACK_STRUCT;
+     struct SLMPHeader {
+          u32     width;     // width
+          u32     height;     // height
+          // variably sized
+     } PACK_STRUCT;
 
 // Default alignment
 #include "irrunpack.h"
@@ -37,9 +37,9 @@ namespace video
 class CImageLoaderLMP : public irr::video::IImageLoader
 {
 public:
-	virtual bool isALoadableFileExtension(const io::path& filename) const;
-	virtual bool isALoadableFileFormat(irr::io::IReadFile* file) const;
-	virtual irr::video::IImage* loadImage(irr::io::IReadFile* file) const;
+     virtual bool isALoadableFileExtension(const io::path& filename) const;
+     virtual bool isALoadableFileFormat(irr::io::IReadFile* file) const;
+     virtual irr::video::IImage* loadImage(irr::io::IReadFile* file) const;
 };
 
 #endif
@@ -50,43 +50,43 @@ public:
 class CImageLoaderWAL : public irr::video::IImageLoader
 {
 public:
-	virtual bool isALoadableFileExtension(const io::path& filename) const;
-	virtual bool isALoadableFileFormat(irr::io::IReadFile* file) const;
-	virtual irr::video::IImage* loadImage(irr::io::IReadFile* file) const;
+     virtual bool isALoadableFileExtension(const io::path& filename) const;
+     virtual bool isALoadableFileFormat(irr::io::IReadFile* file) const;
+     virtual irr::video::IImage* loadImage(irr::io::IReadFile* file) const;
 };
 
 //! An Irrlicht image loader for Halflife 1 engine textures
 class CImageLoaderWAL2 : public irr::video::IImageLoader
 {
 public:
-	virtual bool isALoadableFileExtension(const io::path& filename) const;
-	virtual bool isALoadableFileFormat(irr::io::IReadFile* file) const;
-	virtual irr::video::IImage* loadImage(irr::io::IReadFile* file) const;
+     virtual bool isALoadableFileExtension(const io::path& filename) const;
+     virtual bool isALoadableFileFormat(irr::io::IReadFile* file) const;
+     virtual irr::video::IImage* loadImage(irr::io::IReadFile* file) const;
 };
 
 // byte-align structures
 #include "irrpack.h"
 
-	// Halfelife wad3 type 67 file
-	struct miptex_halflife
-	{
-		c8  name[16];
-		u32 width, height;
-		u32 mipmap[4];		// four mip maps stored
-	} PACK_STRUCT;
+     // Halfelife wad3 type 67 file
+     struct miptex_halflife
+     {
+          c8  name[16];
+          u32 width, height;
+          u32 mipmap[4];          // four mip maps stored
+     } PACK_STRUCT;
 
-	//quake2 texture
-	struct miptex_quake2
-	{
-		c8 name[32];
-		u32 width;
-		u32 height;
-		u32 mipmap[4];		// four mip maps stored
-		c8  animname[32];	// next frame in animation chain
-		s32 flags;
-		s32 contents;
-		s32 value;
-	} PACK_STRUCT;
+     //quake2 texture
+     struct miptex_quake2
+     {
+          c8 name[32];
+          u32 width;
+          u32 height;
+          u32 mipmap[4];          // four mip maps stored
+          c8  animname[32];     // next frame in animation chain
+          s32 flags;
+          s32 contents;
+          s32 value;
+     } PACK_STRUCT;
 
 // Default alignment
 #include "irrunpack.h"

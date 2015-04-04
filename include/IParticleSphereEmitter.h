@@ -17,20 +17,20 @@ class IParticleSphereEmitter : public IParticleEmitter
 {
 public:
 
-	//! Set the center of the sphere for particle emissions
-	virtual void setCenter( const core::vector3df& center ) = 0;
+     //! Set the center of the sphere for particle emissions
+     virtual void setCenter( const core::vector3df& center ) = 0;
 
-	//! Set the radius of the sphere for particle emissions
-	virtual void setRadius( f32 radius ) = 0;
+     //! Set the radius of the sphere for particle emissions
+     virtual void setRadius( f32 radius ) = 0;
 
-	//! Get the center of the sphere for particle emissions
-	virtual const core::vector3df& getCenter() const = 0;
+     //! Get the center of the sphere for particle emissions
+     virtual const core::vector3df& getCenter() const = 0;
 
-	//! Get the radius of the sphere for particle emissions
-	virtual f32 getRadius() const = 0;
+     //! Get the radius of the sphere for particle emissions
+     virtual f32 getRadius() const = 0;
 
-	//! Get emitter type
-	virtual E_PARTICLE_EMITTER_TYPE getType() const { return EPET_SPHERE; }
+     //! Get emitter type
+     virtual E_PARTICLE_EMITTER_TYPE getType() const { return EPET_SPHERE; }
 };
 
 } // end namespace scene

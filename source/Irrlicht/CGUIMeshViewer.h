@@ -17,39 +17,39 @@ namespace irr
 namespace gui
 {
 
-	class CGUIMeshViewer : public IGUIMeshViewer
-	{
-	public:
+     class CGUIMeshViewer : public IGUIMeshViewer
+     {
+     public:
 
-		//! constructor
-		CGUIMeshViewer(IGUIEnvironment* environment, IGUIElement* parent, s32 id, core::rect<s32> rectangle);
+          //! constructor
+          CGUIMeshViewer(IGUIEnvironment* environment, IGUIElement* parent, s32 id, core::rect<s32> rectangle);
 
-		//! destructor
-		virtual ~CGUIMeshViewer();
+          //! destructor
+          virtual ~CGUIMeshViewer();
 
-		//! sets the mesh to be shown
-		virtual void setMesh(scene::IAnimatedMesh* mesh);
+          //! sets the mesh to be shown
+          virtual void setMesh(scene::IAnimatedMesh* mesh);
 
-		//! Gets the displayed mesh
-		virtual scene::IAnimatedMesh* getMesh() const;
+          //! Gets the displayed mesh
+          virtual scene::IAnimatedMesh* getMesh() const;
 
-		//! sets the material
-		virtual void setMaterial(const video::SMaterial& material);
+          //! sets the material
+          virtual void setMaterial(const video::SMaterial& material);
 
-		//! gets the material
-		virtual const video::SMaterial& getMaterial() const;
+          //! gets the material
+          virtual const video::SMaterial& getMaterial() const;
 
-		//! called if an event happened.
-		virtual bool OnEvent(const SEvent& event);
+          //! called if an event happened.
+          virtual bool OnEvent(const SEvent& event);
 
-		//! draws the element and its children
-		virtual void draw();
+          //! draws the element and its children
+          virtual void draw();
 
-	private:
+     private:
 
-		video::SMaterial Material;
-		scene::IAnimatedMesh* Mesh;
-	};
+          video::SMaterial Material;
+          scene::IAnimatedMesh* Mesh;
+     };
 
 
 } // end namespace gui

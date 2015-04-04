@@ -13,34 +13,34 @@ namespace scene
 
 //! constructor
 CParticleFadeOutAffector::CParticleFadeOutAffector(
-	const video::SColor& targetColor, u32 fadeOutTime)
-	: IParticleFadeOutAffector(), TargetColor(targetColor)
+     const video::SColor& targetColor, u32 fadeOutTime)
+     : IParticleFadeOutAffector(), TargetColor(targetColor)
 {
 
-	#ifdef _DEBUG
-	setDebugName("CParticleFadeOutAffector");
-	#endif
+     #ifdef _DEBUG
+     setDebugName("CParticleFadeOutAffector");
+     #endif
 
-	FadeOutTime = fadeOutTime ? static_cast<f32>(fadeOutTime) : 1.0f;
+     FadeOutTime = fadeOutTime ? static_cast<f32>(fadeOutTime) : 1.0f;
 }
 
 
 //! Affects an array of particles.
 void CParticleFadeOutAffector::affect(u32 now, SParticle* particlearray, u32 count)
 {
-	if (!Enabled)
-		return;
-	f32 d;
+     if (!Enabled)
+          return;
+     f32 d;
 
-	for (u32 i=0; i<count; ++i)
-	{
-		if (particlearray[i].endTime - now < FadeOutTime)
-		{
-			d = (particlearray[i].endTime - now) / FadeOutTime;	// FadeOutTime probably f32 to save casts here (just guessing)
-			particlearray[i].color = particlearray[i].startColor.getInterpolated(
-				TargetColor, d);
-		}
-	}
+     for (u32 i=0; i<count; ++i)
+     {
+          if (particlearray[i].endTime - now < FadeOutTime)
+          {
+               d = (particlearray[i].endTime - now) / FadeOutTime;     // FadeOutTime probably f32 to save casts here (just guessing)
+               particlearray[i].color = particlearray[i].startColor.getInterpolated(
+                    TargetColor, d);
+          }
+     }
 }
 
 
@@ -49,8 +49,8 @@ void CParticleFadeOutAffector::affect(u32 now, SParticle* particlearray, u32 cou
 //! scripting languages, editors, debuggers or xml serialization purposes.
 void CParticleFadeOutAffector::serializeAttributes(io::IAttributes* out, io::SAttributeReadWriteOptions* options) const
 {
-	out->addColor("TargetColor", TargetColor);
-	out->addFloat("FadeOutTime", FadeOutTime);
+     out->addColor("TargetColor", TargetColor);
+     out->addFloat("FadeOutTime", FadeOutTime);
 }
 
 //! Reads attributes of the object.
@@ -60,8 +60,8 @@ void CParticleFadeOutAffector::serializeAttributes(io::IAttributes* out, io::SAt
 //! \return: returns last index of an attribute read by this affector
 void CParticleFadeOutAffector::deserializeAttributes(io::IAttributes* in, io::SAttributeReadWriteOptions* options)
 {
-	TargetColor = in->getAttributeAsColor("TargetColor");
-	FadeOutTime = in->getAttributeAsFloat("FadeOutTime");
+     TargetColor = in->getAttributeAsColor("TargetColor");
+     FadeOutTime = in->getAttributeAsFloat("FadeOutTime");
 }
 
 

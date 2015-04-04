@@ -79,14 +79,14 @@
 
 // XBox only suppots the native Window stuff
 #if defined(_XBOX)
-	#undef _IRR_WINDOWS_
-	#define _IRR_XBOX_PLATFORM_
-	#define _IRR_WINDOWS_API_
-	//#define _IRR_COMPILE_WITH_WINDOWS_DEVICE_
-	#undef _IRR_COMPILE_WITH_WINDOWS_DEVICE_
-	//#define _IRR_COMPILE_WITH_SDL_DEVICE_
+     #undef _IRR_WINDOWS_
+     #define _IRR_XBOX_PLATFORM_
+     #define _IRR_WINDOWS_API_
+     //#define _IRR_COMPILE_WITH_WINDOWS_DEVICE_
+     #undef _IRR_COMPILE_WITH_WINDOWS_DEVICE_
+     //#define _IRR_COMPILE_WITH_SDL_DEVICE_
 
-	#include <xtl.h>
+     #include <xtl.h>
 #endif
 
 #if defined(__APPLE__) || defined(MACOSX)
@@ -192,7 +192,7 @@ define out. */
 
 //! Define _IRR_OPENGL_USE_EXTPOINTER_ if the OpenGL renderer should use OpenGL extensions via function pointers.
 /** On some systems there is no support for the dynamic extension of OpenGL
-	via function pointers such that this has to be undef'ed. */
+     via function pointers such that this has to be undef'ed. */
 #if !defined(_IRR_OSX_PLATFORM_) && !defined(_IRR_SOLARIS_PLATFORM_)
 #define _IRR_OPENGL_USE_EXTPOINTER_
 #endif
@@ -248,7 +248,7 @@ the engine will no longer read .jpeg images. */
 
 //! Define _IRR_USE_NON_SYSTEM_JPEG_LIB_ to let irrlicht use the jpeglib which comes with irrlicht.
 /** If this is commented out, Irrlicht will try to compile using the jpeg lib installed in the system.
-	This is only used when _IRR_COMPILE_WITH_LIBJPEG_ is defined. */
+     This is only used when _IRR_COMPILE_WITH_LIBJPEG_ is defined. */
 #define _IRR_USE_NON_SYSTEM_JPEG_LIB_
 #ifdef NO_IRR_USE_NON_SYSTEM_JPEG_LIB_
 #undef _IRR_USE_NON_SYSTEM_JPEG_LIB_
@@ -264,7 +264,7 @@ the engine will no longer read .png images. */
 
 //! Define _IRR_USE_NON_SYSTEM_LIBPNG_ to let irrlicht use the libpng which comes with irrlicht.
 /** If this is commented out, Irrlicht will try to compile using the libpng installed in the system.
-	This is only used when _IRR_COMPILE_WITH_LIBPNG_ is defined. */
+     This is only used when _IRR_COMPILE_WITH_LIBPNG_ is defined. */
 #define _IRR_USE_NON_SYSTEM_LIB_PNG_
 #ifdef NO_IRR_USE_NON_SYSTEM_LIB_PNG_
 #undef _IRR_USE_NON_SYSTEM_LIB_PNG_
@@ -311,20 +311,20 @@ tool <http://developer.nvidia.com/object/nvperfhud_home.html>. */
 
 //! Define one of the three setting for Burning's Video Software Rasterizer
 /** So if we were marketing guys we could say Irrlicht has 4 Software-Rasterizers.
-	In a Nutshell:
-		All Burnings Rasterizers use 32 Bit Backbuffer, 32Bit Texture & 32 Bit Z or WBuffer,
-		16 Bit/32 Bit can be adjusted on a global flag.
+     In a Nutshell:
+          All Burnings Rasterizers use 32 Bit Backbuffer, 32Bit Texture & 32 Bit Z or WBuffer,
+          16 Bit/32 Bit can be adjusted on a global flag.
 
-		BURNINGVIDEO_RENDERER_BEAUTIFUL
-			32 Bit + Vertexcolor + Lighting + Per Pixel Perspective Correct + SubPixel/SubTexel Correct +
-			Bilinear Texturefiltering + WBuffer
+          BURNINGVIDEO_RENDERER_BEAUTIFUL
+               32 Bit + Vertexcolor + Lighting + Per Pixel Perspective Correct + SubPixel/SubTexel Correct +
+               Bilinear Texturefiltering + WBuffer
 
-		BURNINGVIDEO_RENDERER_FAST
-			32 Bit + Per Pixel Perspective Correct + SubPixel/SubTexel Correct + WBuffer +
-			Bilinear Dithering TextureFiltering + WBuffer
+          BURNINGVIDEO_RENDERER_FAST
+               32 Bit + Per Pixel Perspective Correct + SubPixel/SubTexel Correct + WBuffer +
+               Bilinear Dithering TextureFiltering + WBuffer
 
-		BURNINGVIDEO_RENDERER_ULTRA_FAST
-			16Bit + SubPixel/SubTexel Correct + ZBuffer
+          BURNINGVIDEO_RENDERER_ULTRA_FAST
+               16Bit + SubPixel/SubTexel Correct + ZBuffer
 */
 
 #define BURNINGVIDEO_RENDERER_BEAUTIFUL
@@ -371,7 +371,7 @@ B3D, MS3D or X meshes */
 #ifdef NO_IRR_COMPILE_WITH_OGRE_LOADER_
 #undef _IRR_COMPILE_WITH_OGRE_LOADER_
 #endif
-#endif	// _IRR_COMPILE_WITH_SKINNED_MESH_SUPPORT_
+#endif     // _IRR_COMPILE_WITH_SKINNED_MESH_SUPPORT_
 
 //! Define _IRR_COMPILE_WITH_IRR_MESH_LOADER_ if you want to load Irrlicht Engine .irrmesh files
 #define _IRR_COMPILE_WITH_IRR_MESH_LOADER_
@@ -667,10 +667,10 @@ currently only supports zip archives, though. */
 precision will be lower but speed higher. currently X86 only
 */
 #if !defined(_IRR_OSX_PLATFORM_) && !defined(_IRR_SOLARIS_PLATFORM_)
-	//#define IRRLICHT_FAST_MATH
-	#ifdef NO_IRRLICHT_FAST_MATH
-	#undef IRRLICHT_FAST_MATH
-	#endif
+     //#define IRRLICHT_FAST_MATH
+     #ifdef NO_IRRLICHT_FAST_MATH
+     #undef IRRLICHT_FAST_MATH
+     #endif
 #endif
 
 // Some cleanup and standard stuff
@@ -722,64 +722,64 @@ precision will be lower but speed higher. currently X86 only
 
 // XBox does not have OpenGL or DirectX9
 #if defined(_IRR_XBOX_PLATFORM_)
-	#undef _IRR_COMPILE_WITH_OPENGL_
-	#undef _IRR_COMPILE_WITH_DIRECT3D_9_
+     #undef _IRR_COMPILE_WITH_OPENGL_
+     #undef _IRR_COMPILE_WITH_DIRECT3D_9_
 #endif
 
 //! WinCE does not have OpenGL or DirectX9. use minimal loaders
 #if defined(_WIN32_WCE)
-	#undef _IRR_COMPILE_WITH_OPENGL_
-	#undef _IRR_COMPILE_WITH_DIRECT3D_8_
-	#undef _IRR_COMPILE_WITH_DIRECT3D_9_
+     #undef _IRR_COMPILE_WITH_OPENGL_
+     #undef _IRR_COMPILE_WITH_DIRECT3D_8_
+     #undef _IRR_COMPILE_WITH_DIRECT3D_9_
 
-	#undef BURNINGVIDEO_RENDERER_BEAUTIFUL
-	#undef BURNINGVIDEO_RENDERER_FAST
-	#undef BURNINGVIDEO_RENDERER_ULTRA_FAST
-	#define BURNINGVIDEO_RENDERER_CE
+     #undef BURNINGVIDEO_RENDERER_BEAUTIFUL
+     #undef BURNINGVIDEO_RENDERER_FAST
+     #undef BURNINGVIDEO_RENDERER_ULTRA_FAST
+     #define BURNINGVIDEO_RENDERER_CE
 
-	#undef _IRR_COMPILE_WITH_WINDOWS_DEVICE_
-	#define _IRR_COMPILE_WITH_WINDOWS_CE_DEVICE_
-	//#define _IRR_WCHAR_FILESYSTEM
+     #undef _IRR_COMPILE_WITH_WINDOWS_DEVICE_
+     #define _IRR_COMPILE_WITH_WINDOWS_CE_DEVICE_
+     //#define _IRR_WCHAR_FILESYSTEM
 
-	#undef _IRR_COMPILE_WITH_IRR_MESH_LOADER_
-	//#undef _IRR_COMPILE_WITH_MD2_LOADER_
-	#undef _IRR_COMPILE_WITH_MD3_LOADER_
-	#undef _IRR_COMPILE_WITH_3DS_LOADER_
-	#undef _IRR_COMPILE_WITH_COLLADA_LOADER_
-	#undef _IRR_COMPILE_WITH_CSM_LOADER_
-	#undef _IRR_COMPILE_WITH_BSP_LOADER_
-	#undef _IRR_COMPILE_WITH_DMF_LOADER_
-	#undef _IRR_COMPILE_WITH_LMTS_LOADER_
-	#undef _IRR_COMPILE_WITH_MY3D_LOADER_
-	#undef _IRR_COMPILE_WITH_OBJ_LOADER_
-	#undef _IRR_COMPILE_WITH_OCT_LOADER_
-	#undef _IRR_COMPILE_WITH_OGRE_LOADER_
-	#undef _IRR_COMPILE_WITH_LWO_LOADER_
-	#undef _IRR_COMPILE_WITH_STL_LOADER_
-	#undef _IRR_COMPILE_WITH_IRR_WRITER_
-	#undef _IRR_COMPILE_WITH_COLLADA_WRITER_
-	#undef _IRR_COMPILE_WITH_STL_WRITER_
-	#undef _IRR_COMPILE_WITH_OBJ_WRITER_
-	//#undef _IRR_COMPILE_WITH_BMP_LOADER_
-	//#undef _IRR_COMPILE_WITH_JPG_LOADER_
-	#undef _IRR_COMPILE_WITH_PCX_LOADER_
-	//#undef _IRR_COMPILE_WITH_PNG_LOADER_
-	#undef _IRR_COMPILE_WITH_PPM_LOADER_
-	#undef _IRR_COMPILE_WITH_PSD_LOADER_
-	//#undef _IRR_COMPILE_WITH_TGA_LOADER_
-	#undef _IRR_COMPILE_WITH_WAL_LOADER_
-	#undef _IRR_COMPILE_WITH_BMP_WRITER_
-	#undef _IRR_COMPILE_WITH_JPG_WRITER_
-	#undef _IRR_COMPILE_WITH_PCX_WRITER_
-	#undef _IRR_COMPILE_WITH_PNG_WRITER_
-	#undef _IRR_COMPILE_WITH_PPM_WRITER_
-	#undef _IRR_COMPILE_WITH_PSD_WRITER_
-	#undef _IRR_COMPILE_WITH_TGA_WRITER_
+     #undef _IRR_COMPILE_WITH_IRR_MESH_LOADER_
+     //#undef _IRR_COMPILE_WITH_MD2_LOADER_
+     #undef _IRR_COMPILE_WITH_MD3_LOADER_
+     #undef _IRR_COMPILE_WITH_3DS_LOADER_
+     #undef _IRR_COMPILE_WITH_COLLADA_LOADER_
+     #undef _IRR_COMPILE_WITH_CSM_LOADER_
+     #undef _IRR_COMPILE_WITH_BSP_LOADER_
+     #undef _IRR_COMPILE_WITH_DMF_LOADER_
+     #undef _IRR_COMPILE_WITH_LMTS_LOADER_
+     #undef _IRR_COMPILE_WITH_MY3D_LOADER_
+     #undef _IRR_COMPILE_WITH_OBJ_LOADER_
+     #undef _IRR_COMPILE_WITH_OCT_LOADER_
+     #undef _IRR_COMPILE_WITH_OGRE_LOADER_
+     #undef _IRR_COMPILE_WITH_LWO_LOADER_
+     #undef _IRR_COMPILE_WITH_STL_LOADER_
+     #undef _IRR_COMPILE_WITH_IRR_WRITER_
+     #undef _IRR_COMPILE_WITH_COLLADA_WRITER_
+     #undef _IRR_COMPILE_WITH_STL_WRITER_
+     #undef _IRR_COMPILE_WITH_OBJ_WRITER_
+     //#undef _IRR_COMPILE_WITH_BMP_LOADER_
+     //#undef _IRR_COMPILE_WITH_JPG_LOADER_
+     #undef _IRR_COMPILE_WITH_PCX_LOADER_
+     //#undef _IRR_COMPILE_WITH_PNG_LOADER_
+     #undef _IRR_COMPILE_WITH_PPM_LOADER_
+     #undef _IRR_COMPILE_WITH_PSD_LOADER_
+     //#undef _IRR_COMPILE_WITH_TGA_LOADER_
+     #undef _IRR_COMPILE_WITH_WAL_LOADER_
+     #undef _IRR_COMPILE_WITH_BMP_WRITER_
+     #undef _IRR_COMPILE_WITH_JPG_WRITER_
+     #undef _IRR_COMPILE_WITH_PCX_WRITER_
+     #undef _IRR_COMPILE_WITH_PNG_WRITER_
+     #undef _IRR_COMPILE_WITH_PPM_WRITER_
+     #undef _IRR_COMPILE_WITH_PSD_WRITER_
+     #undef _IRR_COMPILE_WITH_TGA_WRITER_
 
 #endif
 
 #ifndef _IRR_WINDOWS_API_
-	#undef _IRR_WCHAR_FILESYSTEM
+     #undef _IRR_WCHAR_FILESYSTEM
 #endif
 
 #if defined(__sparc__) || defined(__sun__)
@@ -787,7 +787,7 @@ precision will be lower but speed higher. currently X86 only
 #endif
 
 #if defined(_IRR_SOLARIS_PLATFORM_)
-	#undef _IRR_COMPILE_WITH_JOYSTICK_EVENTS_
+     #undef _IRR_COMPILE_WITH_JOYSTICK_EVENTS_
 #endif
 
 //! Define __IRR_HAS_S64 if the irr::s64 type should be enable (needs long long, available on most platforms, but not part of ISO C++ 98)
@@ -797,35 +797,35 @@ precision will be lower but speed higher. currently X86 only
 #endif
 
 #if defined(__BORLANDC__)
-	#include <tchar.h>
+     #include <tchar.h>
 
-	// Borland 5.5.1 does not have _strcmpi defined
-	#if __BORLANDC__ == 0x551
-	//    #define _strcmpi strcmpi
-		#undef _tfinddata_t
-		#undef _tfindfirst
-		#undef _tfindnext
+     // Borland 5.5.1 does not have _strcmpi defined
+     #if __BORLANDC__ == 0x551
+     //    #define _strcmpi strcmpi
+          #undef _tfinddata_t
+          #undef _tfindfirst
+          #undef _tfindnext
 
-		#define _tfinddata_t __tfinddata_t
-		#define _tfindfirst  __tfindfirst
-		#define _tfindnext   __tfindnext
-		typedef long intptr_t;
-	#endif
+          #define _tfinddata_t __tfinddata_t
+          #define _tfindfirst  __tfindfirst
+          #define _tfindnext   __tfindnext
+          typedef long intptr_t;
+     #endif
 
 #endif
 
 #ifdef _DEBUG
-	//! A few attributes are written in CSceneManager when _IRR_SCENEMANAGER_DEBUG is enabled
-	// NOTE: Those attributes were used always until 1.8.0 and became a global define for 1.8.1
-	// which is only enabled in debug because it had a large (sometimes >5%) impact on speed.
-	// A better solution in the long run is to break the interface and remove _all_ attribute
-	// access in functions like CSceneManager::drawAll and instead put that information in some
-	// own struct/class or in CSceneManager.
-	// See http://irrlicht.sourceforge.net/forum/viewtopic.php?f=2&t=48211 for the discussion.
-	#define _IRR_SCENEMANAGER_DEBUG
-	#ifdef NO_IRR_SCENEMANAGER_DEBUG
-		#undef _IRR_SCENEMANAGER_DEBUG
-	#endif
+     //! A few attributes are written in CSceneManager when _IRR_SCENEMANAGER_DEBUG is enabled
+     // NOTE: Those attributes were used always until 1.8.0 and became a global define for 1.8.1
+     // which is only enabled in debug because it had a large (sometimes >5%) impact on speed.
+     // A better solution in the long run is to break the interface and remove _all_ attribute
+     // access in functions like CSceneManager::drawAll and instead put that information in some
+     // own struct/class or in CSceneManager.
+     // See http://irrlicht.sourceforge.net/forum/viewtopic.php?f=2&t=48211 for the discussion.
+     #define _IRR_SCENEMANAGER_DEBUG
+     #ifdef NO_IRR_SCENEMANAGER_DEBUG
+          #undef _IRR_SCENEMANAGER_DEBUG
+     #endif
 #endif
 
 #endif // __IRR_COMPILE_CONFIG_H_INCLUDED__

@@ -26,44 +26,44 @@ class irrAllocator
 {
 public:
 
-	//! Destructor
-	virtual ~irrAllocator() {}
+     //! Destructor
+     virtual ~irrAllocator() {}
 
-	//! Allocate memory for an array of objects
-	T* allocate(size_t cnt)
-	{
-		return (T*)internal_new(cnt* sizeof(T));
-	}
+     //! Allocate memory for an array of objects
+     T* allocate(size_t cnt)
+     {
+          return (T*)internal_new(cnt* sizeof(T));
+     }
 
-	//! Deallocate memory for an array of objects
-	void deallocate(T* ptr)
-	{
-		internal_delete(ptr);
-	}
+     //! Deallocate memory for an array of objects
+     void deallocate(T* ptr)
+     {
+          internal_delete(ptr);
+     }
 
-	//! Construct an element
-	void construct(T* ptr, const T&e)
-	{
-		new ((void*)ptr) T(e);
-	}
+     //! Construct an element
+     void construct(T* ptr, const T&e)
+     {
+          new ((void*)ptr) T(e);
+     }
 
-	//! Destruct an element
-	void destruct(T* ptr)
-	{
-		ptr->~T();
-	}
+     //! Destruct an element
+     void destruct(T* ptr)
+     {
+          ptr->~T();
+     }
 
 protected:
 
-	virtual void* internal_new(size_t cnt)
-	{
-		return operator new(cnt);
-	}
+     virtual void* internal_new(size_t cnt)
+     {
+          return operator new(cnt);
+     }
 
-	virtual void internal_delete(void* ptr)
-	{
-		operator delete(ptr);
-	}
+     virtual void internal_delete(void* ptr)
+     {
+          operator delete(ptr);
+     }
 
 };
 
@@ -76,29 +76,29 @@ class irrAllocatorFast
 {
 public:
 
-	//! Allocate memory for an array of objects
-	T* allocate(size_t cnt)
-	{
-		return (T*)operator new(cnt* sizeof(T));
-	}
+     //! Allocate memory for an array of objects
+     T* allocate(size_t cnt)
+     {
+          return (T*)operator new(cnt* sizeof(T));
+     }
 
-	//! Deallocate memory for an array of objects
-	void deallocate(T* ptr)
-	{
-		operator delete(ptr);
-	}
+     //! Deallocate memory for an array of objects
+     void deallocate(T* ptr)
+     {
+          operator delete(ptr);
+     }
 
-	//! Construct an element
-	void construct(T* ptr, const T&e)
-	{
-		new ((void*)ptr) T(e);
-	}
+     //! Construct an element
+     void construct(T* ptr, const T&e)
+     {
+          new ((void*)ptr) T(e);
+     }
 
-	//! Destruct an element
-	void destruct(T* ptr)
-	{
-		ptr->~T();
-	}
+     //! Destruct an element
+     void destruct(T* ptr)
+     {
+          ptr->~T();
+     }
 };
 
 
@@ -111,9 +111,9 @@ public:
 //! defines an allocation strategy
 enum eAllocStrategy
 {
-	ALLOC_STRATEGY_SAFE    = 0,
-	ALLOC_STRATEGY_DOUBLE  = 1,
-	ALLOC_STRATEGY_SQRT    = 2
+     ALLOC_STRATEGY_SAFE    = 0,
+     ALLOC_STRATEGY_DOUBLE  = 1,
+     ALLOC_STRATEGY_SQRT    = 2
 };
 
 

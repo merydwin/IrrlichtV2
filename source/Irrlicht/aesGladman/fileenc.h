@@ -42,7 +42,7 @@
 #include "hmac.h"
 #include "pwd2key.h"
 
-#define	BLOCK_SIZE AES_BLOCK_SIZE
+#define     BLOCK_SIZE AES_BLOCK_SIZE
 #define PASSWORD_VERIFIER
 
 #define MAX_KEY_LENGTH        32

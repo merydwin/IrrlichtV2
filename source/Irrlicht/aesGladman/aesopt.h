@@ -852,8 +852,8 @@ const aes_32t t_dec(r,c)[RC_LENGTH] =
     #define d_1(t,n,b,v) const t n[256]    =   { b(concat(v,0)) }
     #define d_4(t,n,b,v) const t n[4][256] = { { b(concat(v,0)) }, { b(concat(v,1)) }, { b(concat(v,2)) }, { b(concat(v,3)) } }
 #else
-	#define d_1(t,n,b,v) const t n[256]    =   { b(v##0) }
-	#define d_4(t,n,b,v) const t n[4][256] = { { b(v##0) }, { b(v##1) }, { b(v##2) }, { b(v##3) } }
+     #define d_1(t,n,b,v) const t n[256]    =   { b(v##0) }
+     #define d_4(t,n,b,v) const t n[4][256] = { { b(v##0) }, { b(v##1) }, { b(v##2) }, { b(v##3) } }
 #endif
 
 #else   /* declare and instantiate tables for dynamic value generation in in tab.c  */
